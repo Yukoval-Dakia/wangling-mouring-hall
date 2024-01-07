@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+
+<head>
+    <meta charset="UTF-8">
+    <title>你失败了，所以你掉进了WL奇妙灵堂</title>
+    <script type="text/javascript" src="js/jquery.min.js"></script>
+    <script type="text/javascript" src="js/cachep2p.min.js"></script>
+    <script type="text/javascript" src="js/py.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.css">
+    <script src="https://cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js"></script>
+    <meta http-equiv="Access-Control-Allow-Origin" content="*">
+    <link href="css/b.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body onload="ld();">
+    <div id="all">
+        <div class="diantext">奠</div>
+        <div id="dian">
+            <span id="diantx">平视每一位学生</span>
+        </div>
+        <div id="sbframe">
+            <img id="sb" src="https://img.yukovalstudios.com/i/2023/12/31/wllose-65917e990a938.jpg" style="filter: saturate(0); transform: scale(1);" />
+            <img class="lns" id="isa" src="img/a.gif" style="margin-top: -55px;" />
+            <img class="lns" id="isb" src="img/b.gif" style="margin-left: 150px;" />
+            <img class="lns" id="isc" src="img/c.gif" style="margin-left: 175px;" />
+            <img class="lns" id="isd" src="img/d.gif" style="margin-left: 145px;margin-top: -40px;" />
+            <img class="lns" id="ise" src="img/e.png"
+                style="margin-left: 87px; margin-top: -200px; opacity: 0; transform: scale(0.3);animation :rot 0.7s linear infinite;" />
+            <img class="lns" id="isf" src="img/f.gif"
+                style="margin-left: 125px;opacity: 1;margin-top: -125px;z-index: 8;transform: scale(0.6);" />
+            <img class="lns" id="isg" src="img/g.gif"
+                style="margin-left: -100px;opacity: 1;margin-top: -173px;z-index: 8;transform: scale(0.5);" />
+            <img class="lns" id="ish" src="img/h.gif"
+                style="margin-left: 310px;opacity: 1;margin-top: -50px;z-index: 8;" />
+            <img class="lns" id="isi" src="img/i.gif"
+                style="margin-left: 113px;opacity: 1;margin-top: -145px;z-index: 8;transform: scale(0.8);" />
+        </div>
+        <style>
+            @keyframes rot {
+                0% {
+                    transform: scale(0.3) rotateZ(0deg)
+                }
+
+                100% {
+                    transform: scale(0.3) rotateZ(360deg)
+                }
+            }
+
+            @keyframes stop {
+                0% {
+                    transform: scale(0.3)
+                }
+
+                100% {
+                    transform: scale(0.3)
+                }
+            }
+        </style>
+        <div id="leftyx">
+            <div class="lb"></div>
+            <div class="lb"></div>
+            <div class="light"></div>
+        </div>
+        <div id="rightyx">
+            <div class="lb"></div>
+            <div class="lb"></div>
+            <div class="light"></div>
+        </div>
+        <div id="btmper">
+            <audio src="music/lol.mp3" id="playera" controls loop></audio>
+            <div id="wd">
+                <p class="tx">低音</p><input type="range" id="low" min="1" max="30" value="1" />
+                <p class="tx">高音</p><input type="range" id="high" min="1" max="30" value="1" />
+                <p class="tx">「玲」堂蹦迪</p><a href="javascript:;" class="file">自选丧歌<input type="file" name="file"
+                        id="file" onchange="onInputFileChange(); cx.resume();"></a>
+            </div>
+            <span class="lastx">Powered By Esu!™ Media Player Alpha V0.6, WL-Mod By Yukoval</span>
+            <a href="https://yukovalstudios.com"><h2 align="center" style="color: #409dd6;text-shadow: 0px 0px 1px;">回到Yukoval Studios</h2></a>
+            <p></p>
+            <span class="lastx" style="color: #409dd6;text-shadow: 0px 0px 1px;">不是买书买不起，而是把图书馆的书收了自己留着更有性价比</span>
+            <span class="lastx" style="color: #409dd6;text-shadow: 0px 0px 1px;">给它一个手表，它能让手表待机不过两天</span>
+            <span class="lastx" style="color: #409dd6;text-shadow: 0px 0px 1px;">美国五星上将麦克阿瑟曾经说过：如果让王「灵」带领我的军队，那圣诞节攻势就不会是一个笑话</span>
+            <span class="lastx" style="color: #409dd6;text-shadow: 0px 0px 1px;">NASA公开感谢：如果不是王「灵」，阿波罗登月计划就不会是一个笑话</span>
+            <span class="lastx" style="color: #409dd6;text-shadow: 0px 0px 1px;">大型纪录片《啸王子前传》正在播出</span>
+            <span class="lastx" style="color: #404042b4;text-shadow: 0px 0px 1px;">Yukoval Studios</span>
+            <div id="gitalk-container"></div>
+        </div>
+        
+    </div>
+    </div>
+
+
+    <script>
+        
+        var gitalk = new Gitalk({
+            clientID: '912fb56b72e11d942e41',
+            clientSecret: '7dba343c2cadfae89cfe6d953d7be9f40d8a0439',
+            repo: 'wangling-mouring-hall',
+            owner: 'Yukoval-Dakia',
+            admin: ['Yukoval-Dakia'],
+            id: location.pathname,      // Ensure uniqueness and length less than 50
+            distractionFreeMode: true  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</body>
+    <script>
+    window.onload = function(){
+        cx.resume();
+        
+        
+        setTimeout(function(){ld();}, 2000);
+    }
+    ld();
+    </script>
+</html>
